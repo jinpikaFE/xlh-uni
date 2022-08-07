@@ -28,5 +28,19 @@
     "matchMedia": {
       "minWidth": 768
     }
-  }
+  },
+  "tabBar": {
+      "color": "#8a8a8a",
+      "selectedColor": "#d4237a",
+      "borderStyle": "black",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/news/index",
+          "text": "首页",
+          "iconPath": "static/logo.png",
+          "selectedIconPath": "static/logo.png"
+        }
+      ]
+    }
 }
