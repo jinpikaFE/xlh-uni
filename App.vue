@@ -48,6 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import './styles/index.scss';
+@import "./uni_modules/vk-uview-ui/index.scss";
 </style>

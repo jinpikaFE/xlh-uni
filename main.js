@@ -1,4 +1,5 @@
 import App from './App.vue'
+import uView from './uni_modules/vk-uview-ui';
 
 const host = 'https://unidemo.dcloud.net.cn/';
 
@@ -8,7 +9,7 @@ Vue.config.productionTip = false
 Vue.prototype.$host = host;
 App.mpType = 'app'
 const app = new Vue({
-  ...App
+	...App
 })
 app.$mount()
 // #endif
@@ -19,6 +20,9 @@ import {
 } from 'vue'
 export function createApp() {
 	const app = createSSRApp(App)
+
+	// 使用 uView UI
+	app.use(uView)
 	return {
 		app
 	}
