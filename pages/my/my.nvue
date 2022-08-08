@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<u-back-top :scroll-top="scrollTop"></u-back-top>
 		<view class="header">
 			<view class="right">
 				<image class="avatarImg" mode="aspectFill" src="../../static/logo.png" />
@@ -122,6 +123,7 @@
 export default {
 	data() {
 		return {
+			scrollTop: 0,
 			loadStatus: 'loadmore',
 			flowList: [],
 			list: [
@@ -193,6 +195,9 @@ export default {
 				}
 			]
 		};
+	},
+	onPageScroll(e) {
+		this.scrollTop = e.scrollTop;
 	},
 	onLoad() {
 		this.addRandomData();
