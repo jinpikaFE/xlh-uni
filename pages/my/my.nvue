@@ -4,7 +4,7 @@
 		<view class="header">
 			<view class="right">
 				<image class="avatarImg" mode="aspectFill" src="../../static/logo.png" />
-				<text class="userinfo">登录/注册</text>
+				<text class="userinfo" @click="onLoginClick">登录/注册</text>
 			</view>
 			<view class="left"></view>
 		</view>
@@ -225,6 +225,11 @@ export default {
 		},
 		clear() {
 			this.$refs.uWaterfall.clear();
+		},
+		onLoginClick() {
+			uni.navigateTo({
+				url: '/pages/login/login'
+			});
 		}
 	}
 };

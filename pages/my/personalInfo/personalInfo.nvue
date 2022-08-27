@@ -1,0 +1,80 @@
+<template>
+	<view class="container">
+		<view class="card">
+			<uni-list>
+				<uni-list-item title="头像" :showArrow="true">
+					<template v-slot:footer>
+						<u-avatar size="50" class="slot-image" src="/static/logo.png" mode="circle" />
+					</template>
+				</uni-list-item>
+				<uni-list-item title="身份认证" :showArrow="true">
+					<template v-slot:footer>
+						<view class="slot-footer">
+							<text>张三</text>
+							<text class="is-verify">未实名</text>
+						</view>
+					</template>
+				</uni-list-item>
+				<uni-list-item title="性别" :showArrow="true" rightText="女" />
+			</uni-list>
+		</view>
+		<view class="card after">
+			<uni-list>
+				<uni-list-item title="手机号" :showArrow="true" rightText="154*****2223" />
+				<uni-list-item title="修改登陆密码" :showArrow="true" />
+			</uni-list>
+		</view>
+		<view class="card after"><u-button type="default" class="logout" :ripple="true" hover-class="none">退出登陆</u-button></view>
+	</view>
+</template>
+
+<script lang="ts">
+export default {
+	data() {
+		return {};
+	}
+};
+</script>
+
+<style lang="scss">
+.container {
+	background-color: #f5f5f5;
+	height: 100vh;
+
+	.card {
+		background-color: #fff;
+		border-radius: 8px;
+		padding: 0 13px;
+
+		&.after {
+			margin-top: 10px;
+		}
+	}
+
+	.slot-footer {
+		display: flex;
+		flex-direction: row;
+		font-size: 14px;
+		color: rgba(80, 80, 80, 1);
+
+		.is-verify {
+			color: rgba(166, 166, 166, 1);
+			font-size: 12px;
+			line-height: 150%;
+			border: rgba(128, 128, 128, 1) solid 1px;
+			margin-left: 9px;
+		}
+	}
+
+	.logout {
+		padding: 0;
+		color: rgba(0, 0, 0, 1);
+		font-size: 16px;
+		font-weight: bold;
+
+		&::after {
+			border: unset;
+		}
+	}
+}
+</style>
