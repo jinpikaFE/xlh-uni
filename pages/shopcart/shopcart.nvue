@@ -1,21 +1,154 @@
 <template>
-	<uni-data-checkbox multiple v-model="value" :localdata="range" @change="change" mode="list" />
+	<view class="container">
+		<view class="wrap">
+			<u-checkbox-group @change="checkboxGroupChange" shape="circle" active-color="rgba(255, 105, 6, 1)" :wrap="true">
+				<u-checkbox class="check-item" @change="checkedAll" v-model="checkAll" name="全选">全选</u-checkbox>
+				<u-checkbox class="check-item" @change="checkboxChange" v-model="item.checked" v-for="(item, index) in list" :key="index" :name="item.name">
+					<view class="check-box">
+						<u-image style="margin-right: 11px;" src="https://cdn.uviewui.com/uview/example/fade.jpg" width="79px" height="79px" />
+						<view class="right">
+							<text class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</text>
+							<view class="footer">
+								<view class="price">100元</view>
+								<view class="num"><u-number-box v-model="item.num" /></view>
+							</view>
+						</view>
+					</view>
+				</u-checkbox>
+			</u-checkbox-group>
+		</view>
+		<view class="settlement">
+			<view class="total">
+				合计：
+				<text class="num">500元</text>
+			</view>
+			<view class="settle-btn">去结算（4）</view>
+		</view>
+	</view>
 </template>
-
 <script lang="ts">
 export default {
 	data() {
 		return {
-			value: [0, 2],
-			range: [{ value: 0, text: '篮球' }, { value: 1, text: '足球' }, { value: 2, text: '游泳' }]
+			checkAll: false,
+			list: [
+				{
+					name: 'apple',
+					checked: false,
+					disabled: false,
+					num: 0
+				},
+				{
+					name: 'banner',
+					checked: false,
+					disabled: false,
+					num: 0
+				},
+				{
+					name: 'orange',
+					checked: false,
+					disabled: false,
+					num: 0
+				}
+			]
 		};
 	},
 	methods: {
-		change(e) {
-			console.log('e:', e);
+		// 选中某个复选框时，由checkbox时触发
+		checkboxChange(e) {
+			//console.log(e);
+		},
+		// 选中任一checkbox时，由checkbox-group触发
+		checkboxGroupChange(e) {
+			// console.log(e);
+		},
+		// 全选
+		checkedAll(e) {
+			this.list.map(val => {
+				val.checked = e.value;
+			});
 		}
 	}
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@mixin ellipsis-line {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.container {
+	.wrap {
+		padding: 0 16px;
+	}
+
+	.check-item {
+		flex-direction: row;
+		margin-bottom: 11px;
+	}
+
+	.check-box {
+		display: flex;
+		flex-direction: row;
+
+		.right {
+			.title {
+				@include ellipsis-line;
+				width: 224px;
+			}
+
+			.footer {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-top: 30px;
+
+				.price {
+					color: rgba(212, 48, 48, 1);
+					font-size: 14px;
+					font-weight: bolder;
+				}
+			}
+		}
+	}
+
+	.u-numberbox {
+		flex-direction: row;
+	}
+
+	.settlement {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		position: fixed;
+		width: 100%;
+		bottom: 50px;
+		border-top: 1px solid #f5f5f5;
+
+		.total {
+			display: flex;
+			flex-direction: row;
+			margin-left: 20px;
+
+			.num {
+				color: rgba(212, 48, 48, 1);
+				font-weight: bolder;
+			}
+		}
+
+		.settle-btn {
+			width: 149px;
+			height: 48px;
+			background-color: $xlh-color-primary;
+			font-size: 14px;
+			color: #fff;
+			font-weight: bolder;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+</style>

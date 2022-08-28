@@ -36,6 +36,12 @@
 			}
 		},
 		{
+			"path": "pages/productDetail/productDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
 			"path": "pages/news/index",
 			"style": {}
 		},
@@ -49,52 +55,51 @@
 				}
 			}
 		}
-	}
-],
-"globalStyle": {
-	"navigationBarTextStyle": "black",
-	"navigationBarTitleText": "金皮卡",
-	"navigationBarBackgroundColor": "#FFFFFF",
-	"backgroundColor": "#FFFFFF"
-},
-"rightWindow": {
-	"path": "responsive/right-window.vue",
-	"style": {
-		"width": "calc(100vw - 450px)"
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "金皮卡",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
 	},
-	"matchMedia": {
-		"minWidth": 768
-	}
-},
-"tabBar": {
-	"color": "#505050",
-	"selectedColor": "#ff533c",
-	"borderStyle": "#e5e5e5",
-	"backgroundColor": "#ffffff",
-	"list": [{
-			"pagePath": "pages/home/home",
-			"text": "首页",
-			"iconPath": "static/icon/home.svg",
-			"selectedIconPath": "static/icon/home-select.svg"
+	"rightWindow": {
+		"path": "responsive/right-window.vue",
+		"style": {
+			"width": "calc(100vw - 450px)"
 		},
-		{
-			"pagePath": "pages/calssify/calssify",
-			"text": "分类",
-			"iconPath": "static/icon/classify.svg",
-			"selectedIconPath": "static/icon/classify-select.svg"
-		},
-		{
-			"pagePath": "pages/shopcart/shopcart",
-			"text": "购物车",
-			"iconPath": "static/icon/shopcart.svg",
-			"selectedIconPath": "static/icon/shopcart-select.svg"
-		},
-		{
-			"pagePath": "pages/my/my",
-			"text": "我的",
-			"iconPath": "static/icon/my.svg",
-			"selectedIconPath": "static/icon/my-select.svg"
+		"matchMedia": {
+			"minWidth": 768
 		}
-	]
-}
+	},
+	"tabBar": {
+		"color": "#505050",
+		"selectedColor": "#ff533c",
+		"borderStyle": "#e5e5e5",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/icon/home.svg",
+				"selectedIconPath": "static/icon/home-select.svg"
+			},
+			{
+				"pagePath": "pages/calssify/calssify",
+				"text": "分类",
+				"iconPath": "static/icon/classify.svg",
+				"selectedIconPath": "static/icon/classify-select.svg"
+			},
+			{
+				"pagePath": "pages/shopcart/shopcart",
+				"text": "购物车",
+				"iconPath": "static/icon/shopcart.svg",
+				"selectedIconPath": "static/icon/shopcart-select.svg"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/icon/my.svg",
+				"selectedIconPath": "static/icon/my-select.svg"
+			}
+		]
+	}
 }
